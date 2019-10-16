@@ -3,12 +3,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17 ./init.h
 [; ;./init.h: 17: void initMyPIC18F(void);
 [v _initMyPIC18F `(v ~T0 @X0 0 ef ]
-"46 ./glcd.h
-[; ;./glcd.h: 46: extern void glcd_Init(unsigned char mode);
-[v _glcd_Init `(v ~T0 @X0 0 ef1`uc ]
-"55
+"55 ./glcd.h
 [; ;./glcd.h: 55: extern void glcd_Image(void);
 [v _glcd_Image `(v ~T0 @X0 0 ef ]
+"46
+[; ;./glcd.h: 46: extern void glcd_Init(unsigned char mode);
+[v _glcd_Init `(v ~T0 @X0 0 ef1`uc ]
 "57
 [; ;./glcd.h: 57: void glcd_Rect(unsigned char xs, unsigned char ys, unsigned char xe ,unsigned char ye,unsigned char color);
 [v _glcd_Rect `(v ~T0 @X0 0 ef5`uc`uc`uc`uc`uc ]
@@ -523,45 +523,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 8893: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "10 newmain.c
-[; ;newmain.c: 10:         glcd_Rect(8,8,32,16,1);
+[; ;newmain.c: 10:     }
 [p x FOSC = HS ]
 "11
-[; ;newmain.c: 11:     }
-[p x PWRT = OFF ]
-"12
-[; ;newmain.c: 12: 
-[p x BOR = OFF ]
-"13
-[; ;newmain.c: 13: }
-[p x WDT = OFF ]
-"14
+[; ;newmain.c: 11: 
 [p x LVP = OFF ]
-"15
-[p x DEBUG = ON ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"18
+"13
 [v _main `(v ~T0 @X0 1 ef ]
-"19
+"14
 {
 [e :U _main ]
 [f ]
-"21
+"16
 [e ( _initMyPIC18F ..  ]
-"22
-[e ( _glcd_Init (1 -> -> 1 `i `uc ]
-"23
+"17
 [e ( _glcd_Image ..  ]
-"25
+"19
 [e :U 371 ]
-"26
+"20
 {
-"27
+"21
+[e ( _glcd_Init (1 -> -> 1 `i `uc ]
+"22
 [e ( _glcd_Rect (4 , , , , -> -> 8 `i `uc -> -> 8 `i `uc -> -> 32 `i `uc -> -> 16 `i `uc -> -> 1 `i `uc ]
-"28
+"23
 }
 [e :U 370 ]
 [e $U 371  ]
 [e :U 372 ]
-"30
+"25
 [e :UE 369 ]
 }

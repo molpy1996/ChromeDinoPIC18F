@@ -5786,22 +5786,17 @@ void initMyPIC18F(void);
 
 
 #pragma config FOSC = HS
-#pragma config PWRT = OFF
-#pragma config BOR = OFF
-#pragma config WDT = OFF
 #pragma config LVP = OFF
-#pragma config DEBUG = ON
-
 
 void main (void)
 {
 
     initMyPIC18F();
-    glcd_Init(1);
     glcd_Image();
 
     while(1)
     {
+        glcd_Init(1);
         glcd_Rect(8,8,32,16,1);
     }
 

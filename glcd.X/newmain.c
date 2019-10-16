@@ -8,22 +8,17 @@
 #include "main.h"
 
 #pragma config FOSC = HS 		//oscillator HS
-#pragma config PWRT = OFF
-#pragma config BOR = OFF
-#pragma config WDT = OFF 		//Disable watchDog
 #pragma config LVP = OFF 		//Disable low voltage programmig
-#pragma config DEBUG = ON		//Debug ON
-
 
 void main (void)
 {
     // call the function that will init the PIC
     initMyPIC18F();
-    glcd_Init(GLCD_ON);
     glcd_Image();
     //glcd_PlotPixel( 2, 2, 0xFF);
     while(1)
     {
+        glcd_Init(1);
         glcd_Rect(8,8,32,16,1);
     }
 

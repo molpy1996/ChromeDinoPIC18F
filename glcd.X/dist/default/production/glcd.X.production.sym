@@ -6,7 +6,6 @@ __S0 30000E 0 ABS 0
 __S1 1B 0 ABS 0
 __S2 0 0 ABS 0
 __Hintentry 0 0 ABS 0
-__CFG_PWRT$OFF 0 0 ABS 0
 __Lintentry 0 0 ABS 0
 __end_of___awdiv 7268 0 CODE 0
 glcd_FillScreen@color B 0 COMRAM 1
@@ -250,14 +249,11 @@ start_initialization 6E6C 0 CODE 0
 ___awdiv@quotient 7 0 COMRAM 1
 __size_of_initMyPIC18F 0 0 ABS 0
 glcd_Image@ptr B 0 COMRAM 1
-__CFG_DEBUG$ON 0 0 ABS 0
 glcd_Init@mode E 0 COMRAM 1
 __initialization 6E6C 0 CODE 0
-__CFG_BOR$OFF 0 0 ABS 0
 __activetblptr 2 0 ABS 0
 glcd_FillScreen@i D 0 COMRAM 1
 glcd_FillScreen@j C 0 COMRAM 1
-__CFG_WDT$OFF 0 0 ABS 0
 __CFG_LVP$OFF 0 0 ABS 0
 __end_of_initMyPIC18F 6ED8 0 CODE 0
 ___awdiv@dividend 1 0 COMRAM 1
@@ -282,23 +278,23 @@ cinit 6E6C 6E79 CODE 6E6C 0
 %locals
 dist/default/production\glcd.X.production.o
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h
-C:\Users\victo\AppData\Local\Temp\sb7k.s
-4482 6E6C 0 CODE 0
-4484 6E6C 0 CODE 0
-4487 6E6C 0 CODE 0
-4502 6E6C 0 CODE 0
-4503 6E6E 0 CODE 0
-4509 6E70 0 CODE 0
-4512 6E70 0 CODE 0
-4513 6E72 0 CODE 0
-4514 6E74 0 CODE 0
-4515 6E76 0 CODE 0
+C:\Users\victo\AppData\Local\Temp\scg.s
+4474 6E6C 0 CODE 0
+4476 6E6C 0 CODE 0
+4479 6E6C 0 CODE 0
+4494 6E6C 0 CODE 0
+4495 6E6E 0 CODE 0
+4501 6E70 0 CODE 0
+4504 6E70 0 CODE 0
+4505 6E72 0 CODE 0
+4506 6E74 0 CODE 0
+4507 6E76 0 CODE 0
 newmain.c
-18 6E7A 0 CODE 0
-21 6E7A 0 CODE 0
-22 6E7E 0 CODE 0
-23 6E84 0 CODE 0
-27 6E88 0 CODE 0
+13 6E7A 0 CODE 0
+16 6E7A 0 CODE 0
+17 6E7E 0 CODE 0
+21 6E82 0 CODE 0
+22 6E88 0 CODE 0
 init.c
 4 6EA6 0 CODE 0
 7 6EA6 0 CODE 0

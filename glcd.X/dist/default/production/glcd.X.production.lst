@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Wed Oct 16 17:07:18 2019
+                                                                                               Wed Oct 16 17:56:14 2019
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	18F4550
@@ -3536,7 +3536,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   3522 ;;
   3523 ;; *************** function _main *****************
   3524 ;; Defined at:
-  3525 ;;		line 18 in file "newmain.c"
+  3525 ;;		line 13 in file "newmain.c"
   3526 ;; Parameters:    Size  Location     Type
   3527 ;;		None
   3528 ;; Auto vars:     Size  Location     Type
@@ -3572,10 +3572,10 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   3558  006E7A                     _main:
   3559                           	opt callstack 28
   3560  006E7A  EC53  F037         	call	_initMyPIC18F	;wreg free
-  3561  006E7E  0E01               	movlw	1
-  3562  006E80  EC25  F038         	call	_glcd_Init
-  3563  006E84  ECE2  F037         	call	_glcd_Image	;wreg free
-  3564  006E88                     l1598:
+  3561  006E7E  ECE2  F037         	call	_glcd_Image	;wreg free
+  3562  006E82                     l1596:
+  3563  006E82  0E01               	movlw	1
+  3564  006E84  EC25  F038         	call	_glcd_Init
   3565  006E88  0E08               	movlw	8
   3566  006E8A  6E12               	movwf	glcd_Rect@ys^0,c
   3567  006E8C  0E20               	movlw	32
@@ -3586,7 +3586,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   3572  006E96  6E15               	movwf	glcd_Rect@color^0,c
   3573  006E98  0E08               	movlw	8
   3574  006E9A  EC73  F038         	call	_glcd_Rect
-  3575  006E9E  EF44  F037         	goto	l1598
+  3575  006E9E  EF41  F037         	goto	l1596
   3576  006EA2  EF00  F000         	goto	start
   3577  006EA6                     __end_of_main:
   3578                           	opt callstack 0
@@ -4358,11 +4358,11 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   4337                           ;glcd.c: 423:  if(mode == 1)
   4338  0070A2  040E               	decf	glcd_Init@mode^0,w,c
   4339  0070A4  A4D8               	btfss	status,2,c
-  4340  0070A6  EF57  F038         	goto	u651
-  4341  0070AA  EF59  F038         	goto	u650
-  4342  0070AE                     u651:
-  4343  0070AE  EF65  F038         	goto	l1492
-  4344  0070B2                     u650:
+  4340  0070A6  EF57  F038         	goto	u681
+  4341  0070AA  EF59  F038         	goto	u680
+  4342  0070AE                     u681:
+  4343  0070AE  EF65  F038         	goto	l1530
+  4344  0070B2                     u680:
   4345  0070B2                     
   4346                           ;glcd.c: 424:   {;glcd.c: 425:       glcd_WriteByte(0, 0x3F);
   4347  0070B2  0E3F               	movlw	63
@@ -4377,8 +4377,8 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   4356  0070C2  EC6C  F037         	call	_glcd_WriteByte
   4357                           
   4358                           ;glcd.c: 427:   }
-  4359  0070C6  EF6F  F038         	goto	l1494
-  4360  0070CA                     l1492:
+  4359  0070C6  EF6F  F038         	goto	l1532
+  4360  0070CA                     l1530:
   4361                           
   4362                           ;glcd.c: 429:   {;glcd.c: 430:       glcd_WriteByte(0, 0x3E);
   4363  0070CA  0E3E               	movlw	62
@@ -4391,7 +4391,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   4370  0070D6  6E09               	movwf	glcd_WriteByte@data^0,c
   4371  0070D8  0E01               	movlw	1
   4372  0070DA  EC6C  F037         	call	_glcd_WriteByte
-  4373  0070DE                     l1494:
+  4373  0070DE                     l1532:
   4374                           
   4375                           ;glcd.c: 434:  glcd_FillScreen(0);
   4376  0070DE  0E00               	movlw	0
@@ -4574,7 +4574,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   4552                           ;glcd.c: 504:  unsigned char i, j;;glcd.c: 507:  for(i = 0; i < 8; ++i)
   4553  006FCC  0E00               	movlw	0
   4554  006FCE  6E0E               	movwf	glcd_Image@i^0,c
-  4555  006FD0                     l1502:
+  4555  006FD0                     l1464:
   4556                           
   4557                           ;glcd.c: 508:  {;glcd.c: 510:   for(cs=0;cs<=1;cs++)
   4558  006FD0  0E00               	movlw	0
@@ -4603,7 +4603,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   4581                           ;glcd.c: 518:    for(j = 0; j < 64; ++j)
   4582  006FEE  0E00               	movlw	0
   4583  006FF0  6E0D               	movwf	glcd_Image@j^0,c
-  4584  006FF2                     l1518:
+  4584  006FF2                     l1480:
   4585                           
   4586                           ;glcd.c: 519:    {;glcd.c: 521:     glcd_WriteByte(cs, acceuil[ptr]);
   4587  006FF2  0E3B               	movlw	low _acceuil
@@ -4627,31 +4627,31 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   4605  00700E  2A0D               	incf	glcd_Image@j^0,f,c
   4606  007010  0E3F               	movlw	63
   4607  007012  640D               	cpfsgt	glcd_Image@j^0,c
-  4608  007014  EF0E  F038         	goto	u661
-  4609  007018  EF10  F038         	goto	u660
-  4610  00701C                     u661:
-  4611  00701C  EFF9  F037         	goto	l1518
-  4612  007020                     u660:
+  4608  007014  EF0E  F038         	goto	u651
+  4609  007018  EF10  F038         	goto	u650
+  4610  00701C                     u651:
+  4611  00701C  EFF9  F037         	goto	l1480
+  4612  007020                     u650:
   4613  007020                     
   4614                           ;glcd.c: 524:   }
   4615  007020  2A0F               	incf	glcd_Image@cs^0,f,c
   4616  007022  0E01               	movlw	1
   4617  007024  640F               	cpfsgt	glcd_Image@cs^0,c
-  4618  007026  EF17  F038         	goto	u671
-  4619  00702A  EF19  F038         	goto	u670
-  4620  00702E                     u671:
+  4618  007026  EF17  F038         	goto	u661
+  4619  00702A  EF19  F038         	goto	u660
+  4620  00702E                     u661:
   4621  00702E  EFEA  F037         	goto	l89
-  4622  007032                     u670:
+  4622  007032                     u660:
   4623  007032                     
   4624                           ;glcd.c: 525:  }
   4625  007032  2A0E               	incf	glcd_Image@i^0,f,c
   4626  007034  0E07               	movlw	7
   4627  007036  640E               	cpfsgt	glcd_Image@i^0,c
-  4628  007038  EF20  F038         	goto	u681
-  4629  00703C  EF22  F038         	goto	u680
-  4630  007040                     u681:
-  4631  007040  EFE8  F037         	goto	l1502
-  4632  007044                     u680:
+  4628  007038  EF20  F038         	goto	u671
+  4629  00703C  EF22  F038         	goto	u670
+  4630  007040                     u671:
+  4631  007040  EFE8  F037         	goto	l1464
+  4632  007044                     u670:
   4633  007044                     
   4634                           ;glcd.c: 527:      LATBbits.LATB0=0;
   4635  007044  908A               	bcf	138,0,c	;volatile
@@ -4973,7 +4973,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Wed Oct 16 17:07:18 2019
+Symbol Table                                                                                   Wed Oct 16 17:56:14 2019
 
                        _x 001A                         _y 0019                        l43 6ED6  
                       l80 6F4A                        l72 70E4                        l75 6EF2  
@@ -4993,94 +4993,93 @@ Symbol Table                                                                    
                      u710 7136                       u471 722C                       u535 72F4  
                      u711 7132                       u480 7256                       u544 731E  
                      u720 7148                       u481 7252                       u545 731A  
-                     u721 7144                       u490 6FB0                       u650 70B2  
-                     u730 715A                       u491 6FAC                       u651 70AE  
-                     u731 7156                       u660 7020                       u740 716C  
-                     u661 701C                       u741 7168                       u670 7032  
-                     u750 718E                       u671 702E                       u751 718A  
-                     u680 7044                       u760 71A2                       u681 7040  
+                     u721 7144                       u650 7020                       u490 6FB0  
+                     u730 715A                       u651 701C                       u491 6FAC  
+                     u731 7156                       u660 7032                       u740 716C  
+                     u661 702E                       u741 7168                       u670 7044  
+                     u750 718E                       u671 7040                       u751 718A  
+                     u680 70B2                       u760 71A2                       u681 70AE  
                      u761 719E                       u690 70FA                       u827 7054  
-                     u691 70F6              __CFG_BOR$OFF 000000                       wreg 000FE8  
-            __CFG_FOSC$HS 000000              __CFG_LVP$OFF 000000              __CFG_WDT$OFF 000000  
-                    l1300 6F78                      l1230 6EFC                      l1222 6EDA  
-                    l1310 6F9E                      l1302 6F7A                      l1240 6F08  
-                    l1232 6F00                      l1224 6EEA                      l1312 6FA0  
-                    l1320 726E                      l1242 6F0A                      l1234 6F02  
-                    l1226 6EF6                      l1314 6FB0                      l1250 71BE  
-                    l1330 728A                      l1322 727E                      l1074 6EA6  
-                    l1236 6F04                      l1228 6EFA                      l1316 6FB2  
-                    l1308 6F7E                      l1260 71E4                      l1252 71C2  
-                    l1244 71A4                      l1340 72C6                      l1332 728C  
-                    l1324 7282                      l1238 6F06                      l1510 6FE0  
-                    l1502 6FD0                      l1270 721A                      l1262 71F6  
-                    l1254 71D0                      l1246 71A8                      l1350 732C  
-                    l1342 72C8                      l1334 72B6                      l1326 7286  
-                    l1318 726A                      l1520 700A                      l1512 6FEC  
+                     u691 70F6                       wreg 000FE8              __CFG_FOSC$HS 000000  
+            __CFG_LVP$OFF 000000                      l1300 6F78                      l1230 6EFC  
+                    l1222 6EDA                      l1310 6F9E                      l1302 6F7A  
+                    l1240 6F08                      l1232 6F00                      l1224 6EEA  
+                    l1312 6FA0                      l1320 726E                      l1242 6F0A  
+                    l1234 6F02                      l1226 6EF6                      l1314 6FB0  
+                    l1250 71BE                      l1330 728A                      l1322 727E  
+                    l1074 6EA6                      l1236 6F04                      l1228 6EFA  
+                    l1316 6FB2                      l1308 6F7E                      l1500 7052  
+                    l1260 71E4                      l1252 71C2                      l1244 71A4  
+                    l1340 72C6                      l1332 728C                      l1324 7282  
+                    l1238 6F06                      l1510 7062                      l1502 705A  
+                    l1270 721A                      l1262 71F6                      l1254 71D0  
+                    l1246 71A8                      l1350 732C                      l1342 72C8  
+                    l1334 72B6                      l1326 7286                      l1318 726A  
+                    l1520 7084                      l1512 7064                      l1504 705C  
                     l1272 7230                      l1264 71FE                      l1280 7246  
                     l1256 71D8                      l1248 71B6                      l1352 732E  
                     l1344 72D2                      l1336 72B8                      l1328 7288  
-                    l1530 7032                      l1522 700E                      l1514 6FEE  
-                    l1282 7256                      l1274 7238                      l1266 7206  
-                    l1258 71DC                      l1346 72E2                      l1338 72BE  
-                    l1532 7034                      l1524 7010                      l1508 6FD6  
-                    l1460 7050                      l1284 725E                      l1276 723A  
-                    l1268 7214                      l1348 7308                      l1526 7020  
-                    l1518 6FF2                      l1294 6F4C                      l1470 7060  
-                    l1462 7052                      l1278 7240                      l1550 716C  
-                    l1542 7124                      l1534 70E8                      l1528 7022  
-                    l1296 6F60                      l1288 6F46                      l1480 707A  
-                    l1472 7062                      l1464 705A                      l1552 717A  
-                    l1544 7136                      l1298 6F6C                      l1490 70B2  
-                    l1482 7084                      l1474 7064                      l1466 705C  
-                    l1458 704C                      l1546 7148                      l1554 717C  
-                    l1538 70FE                      l1492 70CA                      l1484 708E  
-                    l1476 7066                      l1468 705E                      l1556 718E  
-                    l1548 715A                      l1494 70DE                      l1486 7098  
-                    l1478 7070                      l1558 7190                      l1496 6FC4  
-                    l1488 70A2                      l1592 6E7A                      l1594 6E7E  
-                    l1596 6E84                      l1598 6E88                      _LATD 000F8C  
-           __CFG_DEBUG$ON 000000          ??_glcd_WriteByte 000A                      _main 6E7A  
+                    l1530 70CA                      l1522 708E                      l1514 7066  
+                    l1506 705E                      l1282 7256                      l1274 7238  
+                    l1266 7206                      l1258 71DC                      l1346 72E2  
+                    l1338 72BE                      l1532 70DE                      l1524 7098  
+                    l1516 7070                      l1508 7060                      l1284 725E  
+                    l1276 723A                      l1268 7214                      l1348 7308  
+                    l1470 6FD6                      l1294 6F4C                      l1526 70A2  
+                    l1518 707A                      l1278 7240                      l1550 716C  
+                    l1542 7124                      l1534 70E8                      l1480 6FF2  
+                    l1472 6FE0                      l1464 6FD0                      l1296 6F60  
+                    l1288 6F46                      l1528 70B2                      l1552 717A  
+                    l1544 7136                      l1490 7022                      l1482 700A  
+                    l1474 6FEC                      l1458 6FC4                      l1298 6F6C  
+                    l1546 7148                      l1554 717C                      l1538 70FE  
+                    l1492 7032                      l1484 700E                      l1476 6FEE  
+                    l1556 718E                      l1548 715A                      l1494 7034  
+                    l1486 7010                      l1558 7190                      l1488 7020  
+                    l1496 704C                      l1592 6E7A                      l1498 7050  
+                    l1594 6E7E                      l1596 6E82                      l1598 6E88  
+                    _LATD 000F8C          ??_glcd_WriteByte 000A                      _main 6E7A  
                     prodl 000FF3                      start 0000           __end_of_Font3x6 7FFE  
             ___param_bank 000000           __end_of_Font8x8 7B3B                     ?_main 0001  
          __end_of___awdiv 7268           ___awdiv@divisor 0003           __end_of_acceuil 7F3B  
          ___awdiv@counter 0005                     _PORTA 000F80                     _PORTB 000F81  
                    _PORTC 000F82                     _PORTD 000F83                     _PORTE 000F84  
                    _TRISA 000F92                     _TRISB 000F93                     _TRISC 000F94  
-                   _TRISD 000F95                     _TRISE 000F96             __CFG_PWRT$OFF 000000  
-                   tablat 000FF5                     status 000FD8             ?_initMyPIC18F 0001  
-      glcd_WriteByte@data 0009           __initialization 6E6C        glcd_WriteByte@side 000A  
-            __end_of_main 6EA6                    ??_main 0019             __activetblptr 000002  
-         _glcd_FillScreen 6F44                    _ADCON0 000FC2                    _ADCON1 000FC1  
-        ___awdiv@dividend 0001            ??_initMyPIC18F 0001                 ??___awdiv 0005  
-        ___awdiv@quotient 0007              __mediumconst 733A                    tblptrh 000FF7  
-                  tblptrl 000FF6                    tblptru 000FF8                __accesstop 0060  
- __end_of__initialization 6E70             ___rparam_used 000001            __pcstackCOMRAM 0001  
- __end_of_glcd_FillScreen 6FC4        __size_of_glcd_Init 009C        __size_of_glcd_Rect 00BE  
-   __end_of_glcd_ReadByte 6F44                _glcd_Image 6FC4      __end_of_initMyPIC18F 6ED8  
-                 _Font3x6 7F3B                   _Font8x8 733B         __end_of_glcd_Init 70E6  
-       __end_of_glcd_Rect 71A4                   __Hparam 0000                   __Lparam 0000  
-                 ___awdiv 71A4          ?_glcd_FillScreen 0001                   _acceuil 7B3B  
-                 __pcinit 6E6C                   __ramtop 0800                   __ptext0 6E7A  
-                 __ptext1 6EA6                   __ptext2 70E6                   __ptext3 7268  
-                 __ptext4 6F0E                   __ptext5 71A4                   __ptext6 704A  
-                 __ptext7 6F44                   __ptext8 6FC4                   __ptext9 6ED8  
- __size_of_glcd_PlotPixel 00D2      end_of_initialization 6E70             __Lmediumconst 733A  
- __size_of_glcd_WriteByte 0036               ?_glcd_Image 0001                glcd_Rect@i 0017  
-              glcd_Rect@j 0018     __size_of_initMyPIC18F 0032       start_initialization 6E6C  
-     __size_of_glcd_Image 0086              _initMyPIC18F 6EA6      glcd_FillScreen@color 000B  
-             __pbssCOMRAM 0019            _glcd_PlotPixel 7268             __pmediumconst 733A  
-          _glcd_WriteByte 6ED8                  ?___awdiv 0001                 _glcd_Init 704A  
-               _glcd_Rect 70E6    __end_of_glcd_PlotPixel 733A    __size_of_glcd_ReadByte 0036  
-                _LATBbits 000F8A    __end_of_glcd_WriteByte 6F0E                ?_glcd_Init 0001  
-              ?_glcd_Rect 0012              ??_glcd_Image 000B           ?_glcd_PlotPixel 000B  
-          glcd_Rect@color 0015  __size_of_glcd_FillScreen 0080          glcd_FillScreen@i 000D  
-        glcd_FillScreen@j 000C        __end_of_glcd_Image 704A                  __Hrparam 0000  
-         ?_glcd_WriteByte 0009                  __Lrparam 0000             _glcd_ReadByte 6F0E  
-        __size_of___awdiv 00C4             __size_of_main 002C             glcd_Image@ptr 000B  
-          ?_glcd_ReadByte 0001             glcd_Init@mode 000E               ??_glcd_Init 000E  
-             ??_glcd_Rect 0016       glcd_PlotPixel@color 000C         ??_glcd_FillScreen 000B  
-            glcd_Image@cs 000F        glcd_PlotPixel@data 0010        glcd_PlotPixel@side 0011  
-      glcd_PlotPixel@xpos 000F        glcd_PlotPixel@ypos 000B               glcd_Image@i 000E  
-             glcd_Image@j 000D         glcd_ReadByte@data 0002         glcd_ReadByte@side 0001  
-             glcd_Rect@xe 0013               glcd_Rect@ye 0014               glcd_Rect@xs 0016  
-             glcd_Rect@ys 0012           ??_glcd_ReadByte 0001  
+                   _TRISD 000F95                     _TRISE 000F96                     tablat 000FF5  
+                   status 000FD8             ?_initMyPIC18F 0001        glcd_WriteByte@data 0009  
+         __initialization 6E6C        glcd_WriteByte@side 000A              __end_of_main 6EA6  
+                  ??_main 0019             __activetblptr 000002           _glcd_FillScreen 6F44  
+                  _ADCON0 000FC2                    _ADCON1 000FC1          ___awdiv@dividend 0001  
+          ??_initMyPIC18F 0001                 ??___awdiv 0005          ___awdiv@quotient 0007  
+            __mediumconst 733A                    tblptrh 000FF7                    tblptrl 000FF6  
+                  tblptru 000FF8                __accesstop 0060   __end_of__initialization 6E70  
+           ___rparam_used 000001            __pcstackCOMRAM 0001   __end_of_glcd_FillScreen 6FC4  
+      __size_of_glcd_Init 009C        __size_of_glcd_Rect 00BE     __end_of_glcd_ReadByte 6F44  
+              _glcd_Image 6FC4      __end_of_initMyPIC18F 6ED8                   _Font3x6 7F3B  
+                 _Font8x8 733B         __end_of_glcd_Init 70E6         __end_of_glcd_Rect 71A4  
+                 __Hparam 0000                   __Lparam 0000                   ___awdiv 71A4  
+        ?_glcd_FillScreen 0001                   _acceuil 7B3B                   __pcinit 6E6C  
+                 __ramtop 0800                   __ptext0 6E7A                   __ptext1 6EA6  
+                 __ptext2 70E6                   __ptext3 7268                   __ptext4 6F0E  
+                 __ptext5 71A4                   __ptext6 704A                   __ptext7 6F44  
+                 __ptext8 6FC4                   __ptext9 6ED8   __size_of_glcd_PlotPixel 00D2  
+    end_of_initialization 6E70             __Lmediumconst 733A   __size_of_glcd_WriteByte 0036  
+             ?_glcd_Image 0001                glcd_Rect@i 0017                glcd_Rect@j 0018  
+   __size_of_initMyPIC18F 0032       start_initialization 6E6C       __size_of_glcd_Image 0086  
+            _initMyPIC18F 6EA6      glcd_FillScreen@color 000B               __pbssCOMRAM 0019  
+          _glcd_PlotPixel 7268             __pmediumconst 733A            _glcd_WriteByte 6ED8  
+                ?___awdiv 0001                 _glcd_Init 704A                 _glcd_Rect 70E6  
+  __end_of_glcd_PlotPixel 733A    __size_of_glcd_ReadByte 0036                  _LATBbits 000F8A  
+  __end_of_glcd_WriteByte 6F0E                ?_glcd_Init 0001                ?_glcd_Rect 0012  
+            ??_glcd_Image 000B           ?_glcd_PlotPixel 000B            glcd_Rect@color 0015  
+__size_of_glcd_FillScreen 0080          glcd_FillScreen@i 000D          glcd_FillScreen@j 000C  
+      __end_of_glcd_Image 704A                  __Hrparam 0000           ?_glcd_WriteByte 0009  
+                __Lrparam 0000             _glcd_ReadByte 6F0E          __size_of___awdiv 00C4  
+           __size_of_main 002C             glcd_Image@ptr 000B            ?_glcd_ReadByte 0001  
+           glcd_Init@mode 000E               ??_glcd_Init 000E               ??_glcd_Rect 0016  
+     glcd_PlotPixel@color 000C         ??_glcd_FillScreen 000B              glcd_Image@cs 000F  
+      glcd_PlotPixel@data 0010        glcd_PlotPixel@side 0011        glcd_PlotPixel@xpos 000F  
+      glcd_PlotPixel@ypos 000B               glcd_Image@i 000E               glcd_Image@j 000D  
+       glcd_ReadByte@data 0002         glcd_ReadByte@side 0001               glcd_Rect@xe 0013  
+             glcd_Rect@ye 0014               glcd_Rect@xs 0016               glcd_Rect@ys 0012  
+         ??_glcd_ReadByte 0001  
