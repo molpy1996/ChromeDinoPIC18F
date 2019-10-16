@@ -411,7 +411,7 @@ void glcd_Init(unsigned char mode)
 	GLCD_CS1=0;
 	GLCD_CS2=0;
 	GLCD_RS=0;
-	__delay_us(1); //Delay1TCY();        			//délai pour initialisation
+	__delay_us(1); //Delay1TCY();        //délai pour initialisation
 
  	glcd_WriteByte(GLCD_LEFT,  0xC0);    // Specifie la première ligne RAM line en haut
   	glcd_WriteByte(GLCD_RIGHT, 0xC0);    //   de l'écran
